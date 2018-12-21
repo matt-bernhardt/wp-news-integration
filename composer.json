@@ -1,0 +1,13 @@
+{
+    "name": "mjbernha/wp-news-integration",
+    "description": "A test WordPress plugin",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Matt Bernhardt",
+            "email": "mjbernha@mit.edu"
+        }
+    ],
+    "require": {}
+}
