@@ -2,8 +2,8 @@
 /**
  * Plugin Name: MIT News Integration
  * Plugin URI: https://github.com/MITLibraries/wp-news-integration
- * Description: A plugin to enable integration between sites on a Wordpress network
- * Version: 0.1.0
+ * Description: A plugin to enable integration between sites on a WordPress network
+ * Version: 0.2.0
  * Author: Matt Bernhardt
  * Author URI: https://github.com/matt-bernhardt
  * License: GPL2
@@ -28,45 +28,20 @@
  * along with MIT News Integration. If not, see {URI to Plugin License}.
  */
 
+namespace mitlib;
+
 // Don't call the file directly!
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Defines the MIT News widget
- */
-class MIT_News extends WP_Widget {
-
-	/**
-	 * Constructor
-	 */
-	function __construct() {
-		$widget_ops = array(
-			'classname' => 'news-integration-widget',
-			'description' => __( 'Template class for plugin','plugintemplate' ),
-		);
-		parent::__construct( 'plugin-template', __( 'MIT News','plugintemplate' ), $widget_ops );
-	}
-
-	/**
-	 * Widget() builds the output
-	 *
-	 * @param array $args See WP_Widget in Developer documentation.
-	 * @param array $instance See WP_Widget in Developer documentation.
-	 * @link https://developer.wordpress.org/reference/classes/wp_widget/
-	 */
-	function widget( $args, $instance ) {
-		$args = null;
-		$instance = null;
-		echo '<p>This is the MIT News widget.</p>';
-	}
-}
+// Include the necessary classes.
+include_once( 'class-mit-news.php' );
 
 /**
  * Registers base widget.
  */
 function news_integration_register_template_widget() {
-	register_widget( 'MIT_News' );
+	register_widget( 'mitlib\MIT_News' );
 }
-add_action( 'widgets_init', 'news_integration_register_template_widget' );
+add_action( 'widgets_init', 'mitlib\news_integration_register_template_widget' );
