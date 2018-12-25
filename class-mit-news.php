@@ -16,12 +16,12 @@ class MIT_News extends \WP_Widget {
 	/**
 	 * Constructor
 	 */
-	function __construct() {
+	public function __construct() {
 		$widget_ops = array(
 			'classname'   => 'news-integration-widget',
-			'description' => __( 'Template class for plugin','plugintemplate' ),
+			'description' => __( 'Template class for plugin', 'plugintemplate' ),
 		);
-		parent::__construct( 'plugin-template', __( 'MIT News','plugintemplate' ), $widget_ops );
+		parent::__construct( 'plugin-template', __( 'MIT News', 'plugintemplate' ), $widget_ops );
 	}
 
 	/**
@@ -31,7 +31,7 @@ class MIT_News extends \WP_Widget {
 	 * @param array $instance See WP_Widget in Developer documentation.
 	 * @link https://developer.wordpress.org/reference/classes/wp_widget/
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$args     = null;
 		$instance = null;
 		echo '<p>This is the MIT News widget.</p>';

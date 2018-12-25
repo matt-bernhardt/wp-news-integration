@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the necessary classes.
-include_once( 'class-mit-news.php' );
+require_once 'class-mit-news.php';
 
 /**
  * Registers base widget.
